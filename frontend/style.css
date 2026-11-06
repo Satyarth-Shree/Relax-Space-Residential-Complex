@@ -1,0 +1,255 @@
+/* ============================================================
+   Relax Space Residential Complex — Homepage
+   Design style: Black & White Neo-Brutalism
+   ============================================================ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --grey: #f2f2f2;
+  --grey-2: #e4e4e4;
+  --muted: #555;
+  --border: 3px solid var(--black);
+  --shadow: 8px 8px 0 var(--black);
+  --shadow-sm: 4px 4px 0 var(--black);
+  --shadow-hover: 2px 2px 0 var(--black);
+}
+
+html { height: 100%; }
+
+body {
+  min-height: 100vh;
+  font-family: "Space Grotesk", "Archivo", "Helvetica Neue", monospace, sans-serif;
+  background: var(--white);
+  color: var(--black);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--black); color: var(--white); }
+
+/* ============ Header ============ */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 6vw;
+  border-bottom: var(--border);
+  background: var(--white);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--black);
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: var(--border);
+  box-shadow: var(--shadow-sm);
+  font-weight: 800;
+  font-size: 1.25rem;
+  background: var(--white);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.brand:hover .brand-mark {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--black);
+}
+
+.brand-text {
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.nav {
+  display: flex;
+  gap: 14px;
+}
+
+.nav-item {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  border: 2px solid transparent;
+  cursor: default;
+}
+
+.nav-item:hover {
+  color: var(--black);
+  border: 2px solid var(--black);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ============ Hero ============ */
+.hero {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 70px 6vw 90px;
+  text-align: center;
+}
+
+.pill {
+  display: inline-block;
+  padding: 8px 18px;
+  border: var(--border);
+  box-shadow: var(--shadow-sm);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--black);
+  color: var(--white);
+}
+
+.hero-title {
+  margin: 30px 0 20px;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.hero-title .outline {
+  color: var(--white);
+  -webkit-text-stroke: 2.5px var(--black);
+  text-stroke: 2.5px var(--black);
+}
+
+.hero-sub {
+  max-width: 640px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  border-top: var(--border);
+  border-bottom: var(--border);
+  padding: 16px 0;
+}
+
+/* ============ Cards ============ */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 34px;
+  margin-top: 70px;
+  text-align: left;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 38px 32px;
+  border: var(--border);
+  box-shadow: var(--shadow);
+  background: var(--white);
+  text-decoration: none;
+  color: var(--black);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card-primary {
+  background: var(--white);
+}
+
+.card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0 var(--black);
+}
+
+.card-icon {
+  font-size: 1.8rem;
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border: var(--border);
+  box-shadow: var(--shadow-sm);
+  background: var(--white);
+}
+
+.card-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.card-text {
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.card-cta {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  align-self: flex-start;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: var(--border);
+  box-shadow: var(--shadow-sm);
+  background: var(--black);
+  color: var(--white);
+}
+
+.card:hover .card-cta {
+  background: var(--white);
+  color: var(--black);
+}
+
+.card .arrow {
+  transition: transform 0.15s ease;
+}
+
+.card:hover .arrow { transform: translateX(5px); }
+
+.badge-soon {
+  margin-top: auto;
+  align-self: flex-start;
+  padding: 8px 16px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--black);
+  border: var(--border);
+  box-shadow: var(--shadow-sm);
+  background: var(--grey);
+}
+
+.card-ghost { cursor: default; background: var(--grey); }
+.card-ghost:hover { transform: none; box-shadow: var(--shadow); }
+
+/* ============ Footer ============ */
+.site-footer {
+  text-align: center;
+  padding: 30px 0 40px;
+  border-top: var(--border);
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

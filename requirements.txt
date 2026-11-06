@@ -1,0 +1,4 @@
+fastapi[standard]
+pwdlib[argon2]
+mysql-connector-python
+email-validator

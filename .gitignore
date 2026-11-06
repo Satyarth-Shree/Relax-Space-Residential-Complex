@@ -1,0 +1,13 @@
+# Runtime files produced by start_system.sh
+run/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+.venv/
+
+# Some credentials
+credentials

@@ -1,0 +1,276 @@
+/* ============================================================
+   Relax Space — Resident Application Form
+   Design style: Black & White Neo-Brutalism
+   ============================================================ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --grey: #f2f2f2;
+  --grey-2: #e4e4e4;
+  --muted: #555;
+  --border: 3px solid var(--black);
+  --shadow: 8px 8px 0 var(--black);
+  --shadow-sm: 4px 4px 0 var(--black);
+}
+
+html { height: 100%; }
+
+body {
+  min-height: 100vh;
+  font-family: "Space Grotesk", "Archivo", "Helvetica Neue", monospace, sans-serif;
+  background:
+    repeating-linear-gradient(45deg, transparent 0 28px, rgba(0,0,0,0.04) 28px 30px),
+    var(--grey);
+  color: var(--black);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--black); color: var(--white); }
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 6vw 80px;
+}
+
+/* ============ Back link ============ */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  margin-bottom: 28px;
+  border: var(--border);
+  box-shadow: var(--shadow-sm);
+  background: var(--white);
+  color: var(--black);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.back-link:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--black);
+}
+
+/* ============ Card ============ */
+.form-card {
+  padding: 40px 36px;
+  border: var(--border);
+  box-shadow: var(--shadow);
+  background: var(--white);
+}
+
+.form-head {
+  margin-bottom: 34px;
+  padding-bottom: 26px;
+  border-bottom: var(--border);
+  text-align: center;
+}
+
+.form-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 18px;
+  font-size: 1.8rem;
+  border: var(--border);
+  box-shadow: var(--shadow-sm);
+  background: var(--black);
+}
+
+.form-head h1 {
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.form-head p {
+  max-width: 440px;
+  margin: 12px auto 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ============ Fields ============ */
+.field {
+  display: block;
+  margin-bottom: 22px;
+  padding: 0;
+  border: none;
+}
+
+label,
+legend {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.sub-label { font-size: 0.75rem; }
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 13px 14px;
+  border: var(--border);
+  background: var(--white);
+  color: var(--black);
+  font-family: inherit;
+  font-size: 0.98rem;
+  border-radius: 0;
+  outline: none;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-sm);
+  background: #fafafa;
+}
+
+input.invalid,
+textarea.invalid,
+select.invalid {
+  background: var(--grey);
+  border-color: var(--black);
+  box-shadow: inset 4px 0 0 var(--black), var(--shadow-sm);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #999;
+}
+
+textarea { resize: vertical; }
+
+/* ============ DOB grid ============ */
+.dob-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+/* ============ Select ============ */
+.select-wrap {
+  position: relative;
+}
+
+.select-wrap::after {
+  content: "▼";
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 0.8rem;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding-right: 42px;
+}
+
+select:disabled { color: var(--muted); background: var(--grey); cursor: wait; }
+
+/* ============ Submit button ============ */
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  margin-top: 8px;
+  padding: 16px 20px;
+  border: var(--border);
+  box-shadow: var(--shadow);
+  background: var(--black);
+  color: var(--white);
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translate(-3px, -3px);
+  box-shadow: 11px 11px 0 var(--black);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* ============ Spinner ============ */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid var(--white);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============ Message ============ */
+.msg {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border: var(--border);
+  box-shadow: var(--shadow-sm);
+  font-weight: 600;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  word-break: break-word;
+}
+
+.msg.error {
+  background: var(--white);
+  color: var(--black);
+}
+
+.msg.success {
+  background: var(--black);
+  color: var(--white);
+}
+
+/* ============ Responsive ============ */
+@media (max-width: 540px) {
+  .dob-grid { grid-template-columns: 1fr; }
+  .form-card { padding: 28px 20px; }
+}

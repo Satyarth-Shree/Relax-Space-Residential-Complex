@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply for Accommodation · Relax Space</title>
+  <link rel="stylesheet" href="application.css" />
+</head>
+<body>
+  <main class="page">
+    <a class="back-link" href="../index.html">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+      </svg>
+      Back to home
+    </a>
+
+    <section class="form-card">
+      <div class="form-head">
+        <span class="form-icon">🏠</span>
+        <h1>Apply for Accommodation</h1>
+        <p>Take the first step toward life at Relax Space Residential Complex. All details are required.</p>
+      </div>
+
+      <form id="application-form" novalidate>
+        <div class="field">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="e.g. Aarav Sharma" required />
+        </div>
+
+        <div class="field">
+          <label for="gmail">Gmail Address</label>
+          <input type="email" id="gmail" name="gmail" placeholder="e.g. aarav.sharma@gmail.com" required />
+        </div>
+
+        <fieldset class="field">
+          <legend>Date of Birth</legend>
+          <div class="dob-grid">
+            <div>
+              <label class="sub-label" for="day_of_birth">Day</label>
+              <input type="number" id="day_of_birth" name="day_of_birth" min="1" max="31" placeholder="DD" required />
+            </div>
+            <div>
+              <label class="sub-label" for="month_of_birth">Month</label>
+              <input type="number" id="month_of_birth" name="month_of_birth" min="1" max="12" placeholder="MM" required />
+            </div>
+            <div>
+              <label class="sub-label" for="year_of_birth">Year</label>
+              <input type="number" id="year_of_birth" name="year_of_birth" min="1920" max="2026" placeholder="YYYY" required />
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label for="aadhar_number">Aadhar Number</label>
+          <input type="text" id="aadhar_number" name="aadhar_number" inputmode="numeric" maxlength="12" placeholder="12-digit Aadhar number" required />
+        </div>
+
+        <div class="field">
+          <label for="phone_number">Phone Number</label>
+          <input type="tel" id="phone_number" name="phone_number" inputmode="numeric" maxlength="10" placeholder="10-digit mobile number" required />
+        </div>
+
+        <div class="field">
+          <label for="address">Current Address</label>
+          <textarea id="address" name="address" rows="3" minlength="5" maxlength="130" placeholder="Your residential address" required></textarea>
+        </div>
+
+        <div class="field">
+          <label for="room_seator">Room Seater</label>
+          <div class="select-wrap">
+            <select id="room_seator" name="room_seator" required>
+              <option value="" disabled selected>Loading options…</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="password">Create Password</label>
+          <input type="password" id="password" name="password" minlength="8" maxlength="40" placeholder="Minimum 8 characters" required />
+        </div>
+
+        <button type="submit" class="submit-btn" id="submit-btn">
+          <span class="btn-label">Submit Application</span>
+          <span class="spinner" id="spinner" hidden></span>
+        </button>
+
+        <p class="msg" id="form-msg" hidden></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="application.js"></script>
+</body>
+</html>
